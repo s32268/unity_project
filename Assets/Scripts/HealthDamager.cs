@@ -20,12 +20,15 @@ public class HealthDamager : MonoBehaviour
         HandleTakeDamage(collisionObject);
     }
 
+
     private void HandleTakeDamage(GameObject collisionObject)
     {
+        Debug.Log("Take damage 1");
         if (!collisionObject.CompareTag("Player"))
         {
             return;
         }
+        Debug.Log("Take damage 2");
 
         PlayerStats stats = collisionObject.GetComponent<PlayerStats>();
 
@@ -33,6 +36,7 @@ public class HealthDamager : MonoBehaviour
         {
             return;
         }
+        Debug.Log("Take damage 3");
 
         stats.TakeDamage(damage);
     }
